@@ -4,6 +4,8 @@ public interface IZombieChainHandler
 {
     public void SetTarget(GameObject target);
     public GameObject GetTarget();
+    public GameObject GetBody();
+
     public void MoveToNext();
     public void UpdateTarget();
 

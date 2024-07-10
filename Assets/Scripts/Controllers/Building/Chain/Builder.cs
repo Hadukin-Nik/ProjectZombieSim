@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Builder : MonoBehaviour, IBuildingChainHandler
+public class Builder : MonoBehaviour, IBuildingChainHandler, IHordAction 
 {
     [SerializeField] private Transform _face;
     [SerializeField] private LayerMask _groundMask;
@@ -19,12 +19,14 @@ public class Builder : MonoBehaviour, IBuildingChainHandler
     private int _buildingType;
     private int _index;
 
+    private bool _stop;
+
     void Start()
     {
         _floorController = FindObjectOfType<Floor>();
         _resourceHandler = FindObjectOfType<ResourceHandler>();
         _buildingsFactory = FindObjectOfType<BuildingsFactory>();
-
+        _stop = false;
         _chain = new List<IChainPart>();
         _buildings = new List<GameObject> ();
 
@@ -68,6 +70,10 @@ public class Builder : MonoBehaviour, IBuildingChainHandler
 
     void Update()
     {
+        if(_stop)
+        {
+            return;
+        }
         _chain[_index].Update(Time.deltaTime);
     }
 
@@ -117,5 +123,16 @@ public class Builder : MonoBehaviour, IBuildingChainHandler
     public void SetBuildings(List<GameObject> gameObjects)
     {
         _buildings = gameObjects;
+    }
+
+    public void OnStart()
+    {
+        Declain();
+        _stop = true;
+    }
+
+    public void OnEnd()
+    {
+        _stop = false;
     }
 }

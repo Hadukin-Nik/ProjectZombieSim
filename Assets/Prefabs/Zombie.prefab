@@ -113,9 +113,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _attackCoolDown: 1
   _attackStrength: 5
-  _speed: 3.3
+  _speed: 4
   _sphereRadiusCheck: 0.2
-  _distanceTrigger: 4
+  _distanceTrigger: 10
 --- !u!65 &3267646142424465276
 BoxCollider:
   m_ObjectHideFlags: 0

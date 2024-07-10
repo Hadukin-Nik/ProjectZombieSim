@@ -22,6 +22,7 @@ public class ZombieAttack : IChainPart
     {
         if (_handler.GetTarget() == null)
         {
+            _handler.SetAnimationAttackSpeed(0);
             _handler.MoveToNext();
             return;
         }
@@ -29,12 +30,17 @@ public class ZombieAttack : IChainPart
 
         if(_target.IsAlive())
         {
+            _handler.SetAnimationAttackSpeed(1);
             if (_attackCoolDown <= 0)
             {
                 _target.RemoveHealth(_attackStrength);
                 _attackCoolDown = _attackRecharge;
             }
             _attackCoolDown -= (float) delta;
+        } else
+        {
+            _handler.SetAnimationAttackSpeed(0);
+            _handler.UpdateTarget();
         }
     }
 }

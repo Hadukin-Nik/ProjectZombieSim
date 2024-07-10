@@ -5,7 +5,8 @@ public interface IZombiesChainHandler
 {
     public void MoveToNext();
 
-    public HashSet<ZombieMainController> GetZombies();
+    public Dictionary<ZombieMainController, bool> GetZombies();
+    public int GetKilled();
 
     public void AddZombie(ZombieMainController zombie);
 

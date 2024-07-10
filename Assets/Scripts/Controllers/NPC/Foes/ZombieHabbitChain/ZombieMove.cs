@@ -29,7 +29,7 @@ public class ZombieMove : IChainPart
         }
         _target = _handler.GetTarget().transform;
 
-        if((_target.position -  _body.position).sqrMagnitude < 0.1) {
+        if((_target.position -  _body.position).sqrMagnitude < _raycastDistance) {
             _handler.MoveToNext();
         } else
         {
@@ -41,6 +41,7 @@ public class ZombieMove : IChainPart
             {
                 if (hit.transform.tag != "Foe" && hit.transform.tag != "Enviroment" && hit.transform.gameObject.GetComponent<IDestroyable>() != null)
                 {
+                    _handler.SetAnimtionWalkSpeed(0);
                     _handler.SetTarget(hit.transform.gameObject);
                     _handler.MoveToNext();
                     return;
@@ -64,11 +65,14 @@ public class ZombieMove : IChainPart
                     }
 
                     _body.rotation = Quaternion.LookRotation(newDirection);
+                    _handler.SetAnimtionWalkSpeed(1);
 
                     _body.Translate(newDirection * _speed * (float)delta);
                 }
             } else
             {
+                _handler.SetAnimtionWalkSpeed(1);
+
                 Vector3 look = _target.position - _body.position;
                 look.y = _body.position.y;
                 

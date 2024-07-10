@@ -340,17 +340,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildings:
-  - _gameBody: {fileID: 5110770280864010392, guid: f3f49deaf10150d45b6908c337673d4a, type: 3}
+  - _gameBody: {fileID: 8042169009971769328, guid: f2eb5a7e65dbffe4e82bc522e1183ac5, type: 3}
     _size: {x: 9, y: 3, z: 9}
     _name: House
     _buildingIndificator: 0
     _buildingConditions: 0000000002000000000000000500000000000000
-  - _gameBody: {fileID: 4350577159686599515, guid: 3d32e0159f1d76d4fbc681bf6a2a82ae, type: 3}
+  - _gameBody: {fileID: 3631819060464892454, guid: 924f94335372dc14c8eb3cb54e8e2e8a, type: 3}
     _size: {x: 9, y: 3, z: 9}
     _name: Barracks
     _buildingIndificator: 2
-    _buildingConditions: 0a0000000a000000020000000200000000000000
-  - _gameBody: {fileID: 1915599280714895446, guid: c73625f22452c3a45a893f9ca7567474, type: 3}
+    _buildingConditions: 0500000005000000020000000200000000000000
+  - _gameBody: {fileID: 4878861653451811353, guid: 1d05ee92dad7c2a4fb708fb84e826349, type: 3}
     _size: {x: 0.9, y: 2, z: 0.9}
     _name: Wall
     _buildingIndificator: 3
@@ -371,8 +371,8 @@ MonoBehaviour:
   _pivot: {fileID: 65251749410154225}
   _spawnSize: {x: 5, y: 0, z: 5}
   _zombieSize: {x: 0.25, y: 0, z: 0.25}
-  _zombieCreatingCoolDown: 30
-  _count: 100
+  _zombieCreatingCoolDown: 10
+  _count: 10
 --- !u!114 &4593950638303822301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -385,8 +385,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39690ecc0c06b4845bad2b97c98a4134, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _resources: 0a00000096000000030000000a00000000000000
-  _maxResources: ffffffffffffffff06000000ffffffff00000000
+  _resources: 14000000960000000a0000000a00000000000000
+  _maxResources: ffffffffffffffff14000000ffffffff00000000
 --- !u!1 &8304705278201871269
 GameObject:
   m_ObjectHideFlags: 0

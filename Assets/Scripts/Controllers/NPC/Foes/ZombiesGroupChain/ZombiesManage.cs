@@ -9,11 +9,13 @@ public class ZombiesManage : IChainPart
 
     public void Update(double delta)
     {
-        if (_handler.GetZombies().Count > 0)
+        if (_handler.GetZombies().Count - _handler.GetKilled() > 0)
         {
-            foreach(var z in _handler.GetZombies())
-            {
-                z.Update(delta);
+            foreach(var z in _handler.GetZombies()) {
+                if(z.Value)
+                {
+                    z.Key.Update(delta);
+                }
             }
         } else
         {

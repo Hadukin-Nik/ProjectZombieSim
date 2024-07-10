@@ -37,10 +37,6 @@ public class WallHealthController : MonoBehaviour, IDestroyable
     // Update is called once per frame
     void Update()
     {
-        if(_health < 0.01 && !_setToDestroy) {
-            _setToDestroy = true;
-        }
-
         if(_setToDestroy)
         {
             if(_buildingContoller.getUsedPoints() != null && _buildingContoller.getUsedPoints().Count > 0)
@@ -48,6 +44,10 @@ public class WallHealthController : MonoBehaviour, IDestroyable
                 _floor.ReleaseBuildingPoints(_buildingContoller);
             }
             Destroy(gameObject);
+        }
+        if (_health < 0.01 && !_setToDestroy)
+        {
+            _setToDestroy = true;
         }
     }
 }

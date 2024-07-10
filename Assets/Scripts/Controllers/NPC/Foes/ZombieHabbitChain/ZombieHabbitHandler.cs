@@ -57,7 +57,10 @@ public class ZombieHabbitHandler : IZombieChainHandler, IChainPart
         }
         return _target.gameObject;
     }
-
+    public GameObject GetBody()
+    {
+        return _body.gameObject;
+    }
     public void MoveToNext()
     {
         _index = (_index + 1) % _chains.Count;
@@ -65,12 +68,12 @@ public class ZombieHabbitHandler : IZombieChainHandler, IChainPart
 
     public void SetAnimationAttackSpeed(float speed)
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Attack... Zombie");
     }
 
     public void SetAnimtionWalkSpeed(float speed)
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Walk... Zombie");
     }
 
     public void SetTarget(GameObject target)
@@ -85,10 +88,6 @@ public class ZombieHabbitHandler : IZombieChainHandler, IChainPart
 
     public void Update(double delta)
     {
-        if(_index == 0)
-        {
-            Debug.Log("Some shit happens");
-        }
         _chains[_index].Update(delta);
     }
 }

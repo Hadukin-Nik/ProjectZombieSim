@@ -18,6 +18,10 @@ public class ZombieMainController : IChainPart
 
     public void Update(double delta)
     {
+        if(_zombie == null)
+        {
+            return;
+        }
         if (_zombieHealthController.IsAlive())
         {
             _zombieHabbitController.Update(delta);
@@ -26,6 +30,17 @@ public class ZombieMainController : IChainPart
             _handler.RemoveZombie(this);
 
             GameObject.Destroy(_zombie);
+        }
+    }
+
+    public bool IsAlive()
+    {
+        if(_zombie == null)
+        {
+            return false;
+        } else
+        {
+            return _zombieHealthController.IsAlive();
         }
     }
 }
