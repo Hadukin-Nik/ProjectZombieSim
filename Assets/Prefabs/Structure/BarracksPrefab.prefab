@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbff3afa5b8a660449211197be0a977b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _soldierPrefab: {fileID: 8531676457955638607, guid: 8cf1c19b5aa249548902bab424c328e4, type: 3}
+  _soldierPrefab: {fileID: 5583488395974695522, guid: bfd5b01a7648f4043ac87fd1b0356b40, type: 3}
   _spawnPlace: {fileID: 2301910488804841450}
   _soldierSize: {x: 1, y: 0, z: 1}
   _spawnCount: 3

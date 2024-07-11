@@ -87,7 +87,7 @@ public class BarracksMainController : MonoBehaviour, IHordAction, IBarracks
     public void AddDeadSoldier(SoldierMainController soldier)
     {
         Debug.Log("Trying to kill");
-        _soldiers.Remove(soldier);
+
     }
 
     public void AddAliveSoldier(SoldierMainController soldier)

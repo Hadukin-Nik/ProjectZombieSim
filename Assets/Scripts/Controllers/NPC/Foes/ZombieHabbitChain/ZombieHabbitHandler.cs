@@ -68,12 +68,12 @@ public class ZombieHabbitHandler : IZombieChainHandler, IChainPart
 
     public void SetAnimationAttackSpeed(float speed)
     {
-        Debug.Log("Attack... Zombie");
+        _animator.SetFloat("attack", speed);
     }
 
     public void SetAnimtionWalkSpeed(float speed)
     {
-        Debug.Log("Walk... Zombie");
+        _animator.SetFloat("walk", speed);
     }
 
     public void SetTarget(GameObject target)

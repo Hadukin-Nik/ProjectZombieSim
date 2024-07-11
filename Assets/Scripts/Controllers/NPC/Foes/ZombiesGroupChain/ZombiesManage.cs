@@ -12,10 +12,7 @@ public class ZombiesManage : IChainPart
         if (_handler.GetZombies().Count - _handler.GetKilled() > 0)
         {
             foreach(var z in _handler.GetZombies()) {
-                if(z.Value)
-                {
-                    z.Key.Update(delta);
-                }
+                z.Update(delta);
             }
         } else
         {

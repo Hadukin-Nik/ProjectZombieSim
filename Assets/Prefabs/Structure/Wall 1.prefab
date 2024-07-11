@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 8595116269461112230}
   - component: {fileID: 2678044818369242308}
   - component: {fileID: 5158857261060796533}
+  - component: {fileID: -688581927646102545}
+  - component: {fileID: 2600011580500697542}
   m_Layer: 0
   m_Name: Wall 1
   m_TagString: Untagged
@@ -99,3 +101,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _initialHealth: 50
   _health: 0
+--- !u!114 &-688581927646102545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4878861653451811353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f698adc6887ed348aaf978ad4346a73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &2600011580500697542
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4878861653451811353}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.018000001, y: 0.018000003, z: 0.09711088}
+  m_Center: {x: 0, y: 0, z: 0.008555437}

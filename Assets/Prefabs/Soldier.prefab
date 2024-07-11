@@ -121,10 +121,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _attackCoolDown: 1
   _attackStrength: 10
-  _attackRadius: 4
+  _attackRadius: 10
   _speed: 6
   _sphereRadiusCheck: 0.1
-  _distanceTrigger: 10
+  _distanceTrigger: 40
 --- !u!114 &8443110967543672564
 MonoBehaviour:
   m_ObjectHideFlags: 0

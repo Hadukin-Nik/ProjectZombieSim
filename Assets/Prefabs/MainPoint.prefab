@@ -367,11 +367,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32a13ee9226f8c04292e0358d203a020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _zombiePrefab: {fileID: 6862048684856739923, guid: 848f86ef92c6b5a458b4c6b375c4ed75, type: 3}
+  _zombiePrefab: {fileID: 6997217808276363658, guid: 330f6570cd5ea224898dd9cdbc85da1d, type: 3}
   _pivot: {fileID: 65251749410154225}
   _spawnSize: {x: 5, y: 0, z: 5}
   _zombieSize: {x: 0.25, y: 0, z: 0.25}
-  _zombieCreatingCoolDown: 10
+  _zombieCreatingCoolDown: 1
   _count: 10
 --- !u!114 &4593950638303822301
 MonoBehaviour:

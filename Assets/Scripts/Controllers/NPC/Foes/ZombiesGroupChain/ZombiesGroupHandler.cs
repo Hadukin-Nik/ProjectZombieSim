@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class ZombiesGroupHandler : MonoBehaviour, IZombiesChainHandler
@@ -18,6 +19,7 @@ public class ZombiesGroupHandler : MonoBehaviour, IZombiesChainHandler
 
     private List<IChainPart> _parts;
     private int _index;
+    private int _killed;
 
     void Start()
     {
@@ -48,16 +50,44 @@ public class ZombiesGroupHandler : MonoBehaviour, IZombiesChainHandler
     public void MoveToNext()
     {
         _index = (_index + 1) % _parts.Count;
+
+        if (_index == 0)
+        {
+
+            _zombies.Clear();
+
+            _killed = 0;
+            var saveables = new List<IHordAction>();
+            var rootObjs = SceneManager.GetActiveScene().GetRootGameObjects();
+            foreach (var root in rootObjs)
+            {
+                // Pass in "true" to include inactive and disabled children
+                IHordAction action = root.GetComponent<IHordAction>();
+                if (action != null)
+                {
+                    saveables.Add(action);
+                }
+            }
+            foreach (var obj in saveables)
+            {
+                obj.OnEnd();
+            }
+        }
     }
 
     public void RemoveZombie(ZombieMainController zombie)
     {
-        _zombies.Remove(zombie);
+        _killed++;
     }
 
     // Update is called once per frame
     void Update()
     {
         _parts[_index].Update(Time.deltaTime);
+    }
+
+    public int GetKilled()
+    {
+        return _killed;
     }
 }
