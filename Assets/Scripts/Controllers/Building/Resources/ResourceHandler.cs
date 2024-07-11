@@ -13,12 +13,15 @@ public class ResourceHandler : MonoBehaviour
     //initialize UI
     private void Start()
     {
-        for(int i = 0; i < _resources.Count; i++)
+
+    }
+    public void FixedUpdate()
+    {
+        for (int i = 0; i < _resources.Count; i++)
         {
             OnResourceChange?.Invoke(i, _resources[i], _maxResources[i]);
         }
     }
-
     public void PlusResources()
     {
         _resources.Add(0);
