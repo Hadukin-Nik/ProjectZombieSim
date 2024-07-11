@@ -47,6 +47,10 @@ public class TextFadeEffect : MonoBehaviour
 
     public IEnumerator FadeTextToFullAlpha(float t, TextMeshProUGUI textObject)
     {
+        if(t <= 0.01)
+        {
+            t = 1;
+        }
         textObject.color = new Color(textObject.color.r, textObject.color.g, textObject.color.b, 0);
         while (textObject.color.a < 1.0f)
         {
@@ -57,6 +61,10 @@ public class TextFadeEffect : MonoBehaviour
 
     public IEnumerator FadeTextToZeroAlpha(float t, TextMeshProUGUI textObject)
     {
+        if (t <= 0.01)
+        {
+            t = 1;
+        }
         textObject.color = new Color(textObject.color.r, textObject.color.g, textObject.color.b, 1);
         while (textObject.color.a > 0.0f)
         {
